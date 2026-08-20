@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg-dark: #061220;
+    --color-card-dark: #0b1a30;
+    --color-accent-volt: #e2f939;
+    --color-accent-blue: #38bdf8;
+  }
+
+  body {
+    background-color: #061220;
+    color: #f8fafc;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    border: none;
+    text-align: left;
+  }
+}
+
+/* Crisp Sports-Tech Panels (No Neon Glows) */
+.glass-panel {
+  background: rgba(11, 26, 48, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: rgba(11, 26, 48, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 249, 57, 0.3);
+}
+
+.glass-input {
+  background: rgba(8, 20, 38, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f8fafc;
+  transition: all 0.15s ease;
+}
+
+.glass-input:focus {
+  border-color: #e2f939;
+  outline: none;
+  box-shadow: 0 0 0 1px #e2f939;
+}
+
+/* Athletic Marquee Tape */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #061220;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #172a45;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #233d63;
+}
+
+
+/* STARQ 2.0 UI polish: keep the existing feature components intact while
+   giving every screen a consistent, responsive product shell. */
+html { scroll-behavior: smooth; }
+body {
+  background:
+    radial-gradient(circle at 15% -10%, rgba(56, 189, 248, 0.07), transparent 30rem),
+    radial-gradient(circle at 85% 0%, rgba(226, 249, 57, 0.05), transparent 28rem),
+    #061220;
+}
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #e2f939;
+  outline-offset: 3px;
+}
+.mobile-nav-item {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  border-radius: 12px;
+  color: #cbd5e1;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.07);
+  font-size: 12px;
+  font-weight: 800;
+  text-align: left;
+}
+.mobile-nav-item:hover { background: rgba(255,255,255,.08); color: #fff; }
+.mobile-nav-item-active {
+  color: #061220;
+  background: #e2f939;
+  border-color: #e2f939;
+}
+::selection { background: #e2f939; color: #061220; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
