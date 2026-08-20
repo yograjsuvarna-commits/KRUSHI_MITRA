@@ -1,1 +1,0 @@
-# KRUSHI_MITRA
